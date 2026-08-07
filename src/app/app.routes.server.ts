@@ -1,0 +1,9 @@
+import { RenderMode, ServerRoute } from '@angular/ssr';
+import { Routes } from '@angular/router';
+
+export const serverRoutes: ServerRoute[] = [
+  {
+    path: '**',
+    renderMode: RenderMode.Server
+  }
+];
