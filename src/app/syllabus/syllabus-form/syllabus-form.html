@@ -9,28 +9,22 @@
 
   <div class="card">
     <div class="card__title">Información del syllabus</div>
-    <div class="form-grid">
-      <div class="form-field">
-        <label>Nombre de la asignatura</label>
-        <input formControlName="nombreAsignatura" placeholder="Ej. Programación Orientada a Objetos" />
-      </div>
-      <div class="form-field">
-        <label>Programa académico</label>
-        <input formControlName="programaAcademico" placeholder="Ej. Análisis y Desarrollo de Software" />
-      </div>
-      <div class="form-field">
-        <label>Créditos</label>
-        <input type="number" formControlName="creditos" min="1" />
-      </div>
-      <div class="form-field">
-        <label>Intensidad horaria</label>
-        <input type="number" formControlName="intensidadHoraria" min="1" />
-      </div>
+
+    <div class="form-field" style="margin-bottom:16px;">
+      <label>Asignatura</label>
+      <select formControlName="idAsignatura">
+        <option [ngValue]="null" disabled>Selecciona una asignatura...</option>
+        <option *ngFor="let a of asignaturas" [ngValue]="a.idAsignatura">
+          {{ a.nombreAsignatura }}
+        </option>
+      </select>
     </div>
-    <div class="form-field" style="margin-top:16px;">
-      <label>Descripción</label>
-      <textarea formControlName="descripcion" rows="4"
-        style="width:100%; border:1px solid var(--gray-border); border-radius:6px; padding:12px; font-size:13px; font-family:inherit;"></textarea>
+
+    <div class="form-field">
+      <label>Descripción / contenido del plan</label>
+      <textarea formControlName="descripcion" rows="6"
+        style="width:100%; border:1px solid var(--gray-border); border-radius:6px; padding:12px; font-size:13px; font-family:inherit;"
+        placeholder="Describe el contenido, metodología y evaluación del curso..."></textarea>
     </div>
   </div>
 

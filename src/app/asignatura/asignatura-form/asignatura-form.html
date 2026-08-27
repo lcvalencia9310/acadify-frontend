@@ -1,0 +1,50 @@
+<form [formGroup]="form" (ngSubmit)="guardar()">
+
+  <div style="margin-bottom:20px;">
+    <a routerLink="/asignatura" style="font-size:12px; color:var(--blue);">‹ Volver al listado</a>
+    <div style="font-size:22px; font-weight:700; margin-top:8px;">
+      {{ isNew ? 'Nueva Asignatura' : 'Editar Asignatura' }}
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card__title">Información de la asignatura</div>
+    <div class="form-grid">
+      <div class="form-field">
+        <label>Código de asignatura</label>
+        <input formControlName="codigoAsignatura" placeholder="Ej. ADSO-101" />
+      </div>
+
+      <div class="form-field">
+        <label>Nombre de la asignatura</label>
+        <input formControlName="nombreAsignatura" placeholder="Ej. Programación Orientada a Objetos" />
+      </div>
+
+      <div class="form-field">
+        <label>Programa académico</label>
+        <select formControlName="idPrograma">
+          <option [ngValue]="null" disabled>Selecciona un programa...</option>
+          <option *ngFor="let p of programas" [ngValue]="p.idPrograma">
+            {{ p.nombrePrograma }}
+          </option>
+        </select>
+      </div>
+
+      <div class="form-field">
+        <label>Créditos</label>
+        <input type="number" formControlName="creditos" min="1" />
+      </div>
+
+      <div class="form-field">
+        <label>Intensidad horaria</label>
+        <input type="number" formControlName="intensidadHoraria" min="1" />
+      </div>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <a class="btn btn--ghost" routerLink="/asignatura">Cancelar</a>
+    <button type="submit" class="btn btn--primary">Guardar</button>
+  </div>
+
+</form>

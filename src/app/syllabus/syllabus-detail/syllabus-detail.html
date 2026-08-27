@@ -3,34 +3,22 @@
   <div style="display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:20px;">
     <div>
       <a routerLink="/syllabus" style="font-size:12px; color:var(--blue);">‹ Volver al listado</a>
-      <div style="font-size:22px; font-weight:700; margin-top:8px;">{{ syllabus.nombreAsignatura }}</div>
+      <div style="font-size:22px; font-weight:700; margin-top:8px;">{{ syllabus.asignatura?.nombreAsignatura }}</div>
       <div style="font-size:13px; color:var(--gray-text); margin-top:2px;">
-        {{ syllabus.programaAcademico }} · {{ syllabus.creditos }} créditos · {{ syllabus.intensidadHoraria }} horas
+        {{ syllabus.asignatura?.creditos }} créditos · {{ syllabus.asignatura?.intensidadHoraria }} horas
       </div>
     </div>
     <a class="btn btn--outline" [routerLink]="['/syllabus', syllabus.idSyllabus, 'editar']">Editar</a>
   </div>
 
   <div class="card">
-    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:18px;">
-      <div>
-        <div style="font-size:12px; color:var(--gray-text-light); margin-bottom:4px;">Créditos</div>
-        <div style="font-weight:600;">{{ syllabus.creditos }}</div>
-      </div>
-      <div>
-        <div style="font-size:12px; color:var(--gray-text-light); margin-bottom:4px;">Intensidad horaria</div>
-        <div style="font-weight:600;">{{ syllabus.intensidadHoraria }} h</div>
-      </div>
-      <div>
-        <div style="font-size:12px; color:var(--gray-text-light); margin-bottom:4px;">Fecha de creación</div>
-        <div style="font-weight:600;">{{ syllabus.fechaCreacion }}</div>
-      </div>
-    </div>
+    <div class="card__title">Descripción</div>
+    <div>{{ syllabus.descripcion || 'Sin descripción registrada.' }}</div>
   </div>
 
   <div class="card">
-    <div class="card__title">Descripción</div>
-    <div>{{ syllabus.descripcion || 'Sin descripción registrada.' }}</div>
+    <div class="card__title">Fecha de creación</div>
+    <div>{{ syllabus.fechaCreacion }}</div>
   </div>
 
 </ng-container>

@@ -1,0 +1,40 @@
+<div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:20px;">
+  <div>
+    <div style="font-size:22px; font-weight:700;">Programas</div>
+    <div style="font-size:13px; color:var(--gray-text); margin-top:2px;">Programas académicos registrados</div>
+  </div>
+  <a class="btn btn--primary" routerLink="/programa/nuevo">+ Nuevo Programa</a>
+</div>
+
+<div *ngIf="cargando" style="padding: 24px; color: var(--gray-text);">Cargando programas...</div>
+
+<table class="syllabus-table" *ngIf="!cargando">
+  <thead>
+    <tr>
+      <th>Código</th>
+      <th>Nombre del programa</th>
+      <th>Estado</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of programas">
+      <td style="font-weight:600;">{{ p.codigoPrograma }}</td>
+      <td>{{ p.nombrePrograma }}</td>
+      <td>
+        <span class="status-badge" [ngClass]="p.activo ? 'status-Activo' : 'status-Borrador'">
+          {{ p.activo ? 'Activo' : 'Inactivo' }}
+        </span>
+      </td>
+      <td style="white-space:nowrap; text-align:right;">
+        <span class="add-link" (click)="editar(p.idPrograma)">Editar</span>
+        &nbsp;·&nbsp;
+        <span class="remove-btn" (click)="eliminar(p.idPrograma)">Eliminar</span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="pagination" *ngIf="!cargando">
+  <div>Mostrando {{ programas.length }} programas</div>
+</div>

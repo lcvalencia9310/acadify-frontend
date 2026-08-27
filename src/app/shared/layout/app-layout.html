@@ -1,0 +1,24 @@
+<div class="syllabus-layout">
+  <aside class="sidebar">
+    <div class="sidebar__logo">ACADIFY</div>
+    <a class="nav-item" routerLink="/programa" routerLinkActive="active">Programas</a>
+    <a class="nav-item" routerLink="/asignatura" routerLinkActive="active">Asignaturas</a>
+    <a class="nav-item" routerLink="/resultado-aprendizaje" routerLinkActive="active">Resultados de Aprendizaje</a>
+    <a class="nav-item" routerLink="/syllabus" routerLinkActive="active">Syllabus</a>
+    <div class="sidebar__footer">V.1.0</div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <div class="topbar__breadcrumb">Acadify</div>
+      <div style="display:flex; align-items:center; gap:16px;">
+        <div class="topbar__search">Buscar...</div>
+        <div class="topbar__avatar">MD</div>
+      </div>
+    </header>
+
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

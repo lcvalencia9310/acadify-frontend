@@ -1,0 +1,16 @@
+.nav-item {
+  padding: 11px 20px;
+  margin: 0 8px 2px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #B7C4D1;
+  cursor: pointer;
+  display: block;
+  text-decoration: none;
+
+  &.active { font-weight: 700; color: #fff; background: var(--blue); }
+  &:hover:not(.active):not(.nav-item--disabled) { background: rgba(255,255,255,0.06); }
+
+  &--disabled { cursor: default; opacity: 0.45; }
+}

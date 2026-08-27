@@ -1,0 +1,40 @@
+<div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:20px;">
+  <div>
+    <div style="font-size:22px; font-weight:700;">Asignaturas</div>
+    <div style="font-size:13px; color:var(--gray-text); margin-top:2px;">Catálogo de asignaturas por programa</div>
+  </div>
+  <a class="btn btn--primary" routerLink="/asignatura/nuevo">+ Nueva Asignatura</a>
+</div>
+
+<div *ngIf="cargando" style="padding: 24px; color: var(--gray-text);">Cargando asignaturas...</div>
+
+<table class="syllabus-table" *ngIf="!cargando">
+  <thead>
+    <tr>
+      <th>Código</th>
+      <th>Nombre</th>
+      <th>Programa</th>
+      <th>Créditos</th>
+      <th>Intensidad</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let a of asignaturas">
+      <td style="font-weight:600;">{{ a.codigoAsignatura }}</td>
+      <td>{{ a.nombreAsignatura }}</td>
+      <td>{{ a.programa?.nombrePrograma }}</td>
+      <td>{{ a.creditos }}</td>
+      <td>{{ a.intensidadHoraria }} h</td>
+      <td style="white-space:nowrap; text-align:right;">
+        <span class="add-link" (click)="editar(a.idAsignatura)">Editar</span>
+        &nbsp;·&nbsp;
+        <span class="remove-btn" (click)="eliminar(a.idAsignatura)">Eliminar</span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="pagination" *ngIf="!cargando">
+  <div>Mostrando {{ asignaturas.length }} asignaturas</div>
+</div>

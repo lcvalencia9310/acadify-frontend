@@ -1,0 +1,36 @@
+<form [formGroup]="form" (ngSubmit)="guardar()">
+
+  <div style="margin-bottom:20px;">
+    <a routerLink="/programa" style="font-size:12px; color:var(--blue);">‹ Volver al listado</a>
+    <div style="font-size:22px; font-weight:700; margin-top:8px;">
+      {{ isNew ? 'Nuevo Programa' : 'Editar Programa' }}
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card__title">Información del programa</div>
+    <div class="form-grid">
+      <div class="form-field">
+        <label>Código de programa</label>
+        <input formControlName="codigoPrograma" placeholder="Ej. 228118" />
+      </div>
+      <div class="form-field">
+        <label>Nombre del programa</label>
+        <input formControlName="nombrePrograma" placeholder="Ej. Análisis y Desarrollo de Software" />
+      </div>
+      <div class="form-field">
+        <label>Estado</label>
+        <select formControlName="activo">
+          <option [ngValue]="true">Activo</option>
+          <option [ngValue]="false">Inactivo</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <a class="btn btn--ghost" routerLink="/programa">Cancelar</a>
+    <button type="submit" class="btn btn--primary">Guardar</button>
+  </div>
+
+</form>

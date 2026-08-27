@@ -1,9 +1,14 @@
+export interface AsignaturaResumen {
+  idAsignatura: number;
+  codigoAsignatura?: string;
+  nombreAsignatura?: string;
+  creditos?: number;
+  intensidadHoraria?: number;
+}
+
 export interface Syllabus {
   idSyllabus?: number;
-  nombreAsignatura: string;
   descripcion: string;
-  creditos: number;
-  intensidadHoraria: number;
-  programaAcademico: string;
+  asignatura: AsignaturaResumen | null;
   fechaCreacion?: string;
 }

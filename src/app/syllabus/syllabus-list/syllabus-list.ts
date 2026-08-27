@@ -1,9 +1,8 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NavigationEnd, Router, RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { SyllabusService } from '../syllabus';
 import { Syllabus } from '../syllabus.model';
-import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-syllabus-list',
@@ -18,19 +17,11 @@ export class SyllabusList implements OnInit {
   syllabuses: Syllabus[] = [];
   cargando = true;
 
-  ngOnInit() {
-    this.cargarLista();
-
-    // Vuelve a cargar cada vez que la navegación termina en esta ruta
-    // (cubre el caso de volver desde crear/editar/eliminar)
-    this.router.events
-      .pipe(filter((evento) => evento instanceof NavigationEnd))
-      .subscribe(() => {
-        if (this.router.url === '/syllabus') {
-          this.cargarLista();
-        }
-      });
-  }
+ ngOnInit() {
+  // Angular destruye y vuelve a crear este componente cada vez que se
+  // reentra a la ruta '/syllabus', así que basta con cargar aquí.
+  this.cargarLista();
+}
 
   cargarLista() {
     this.cargando = true;

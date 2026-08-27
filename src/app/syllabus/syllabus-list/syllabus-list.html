@@ -12,7 +12,6 @@
   <thead>
     <tr>
       <th>Asignatura</th>
-      <th>Programa académico</th>
       <th>Créditos</th>
       <th>Intensidad</th>
       <th>Fecha creación</th>
@@ -22,12 +21,11 @@
   <tbody>
     <tr *ngFor="let s of syllabuses">
       <td style="font-weight:600;">
-        {{ s.nombreAsignatura }}
+        {{ s.asignatura?.nombreAsignatura }}
         <div style="font-weight:400; font-size:12px; color:var(--gray-text);">{{ s.descripcion }}</div>
       </td>
-      <td>{{ s.programaAcademico }}</td>
-      <td>{{ s.creditos }}</td>
-      <td>{{ s.intensidadHoraria }} h</td>
+      <td>{{ s.asignatura?.creditos }}</td>
+      <td>{{ s.asignatura?.intensidadHoraria }} h</td>
       <td>{{ s.fechaCreacion }}</td>
       <td style="white-space:nowrap; text-align:right;">
         <span class="add-link" (click)="editar(s.idSyllabus)">Editar</span>
