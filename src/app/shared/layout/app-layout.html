@@ -1,13 +1,17 @@
 <div class="syllabus-layout">
 
-  
   <aside class="sidebar">
     <div class="sidebar__logo">ACADIFY</div>
     <a class="nav-item" routerLink="/programa" routerLinkActive="active">Programas</a>
     <a class="nav-item" routerLink="/asignatura" routerLinkActive="active">Asignaturas</a>
     <a class="nav-item" routerLink="/resultado-aprendizaje" routerLinkActive="active">Resultados de Aprendizaje</a>
     <a class="nav-item" routerLink="/syllabus" routerLinkActive="active">Syllabus</a>
-    <div class="sidebar__footer">V.1.0</div>
+    <div class="sidebar__footer">
+      V.1.0
+      <button (click)="cerrarSesion()" style="display:block; margin-top:8px; background:none; border:none; color:#B7C4D1; cursor:pointer; font-size:12px; padding:0;">
+        Cerrar sesión
+      </button>
+    </div>
   </aside>
 
   <div class="main">

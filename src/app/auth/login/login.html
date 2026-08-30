@@ -1,0 +1,27 @@
+<div style="max-width: 380px; margin: 80px auto; padding: 0 20px;">
+  <div class="card">
+    <div class="card__title">Iniciar sesión — Acadify</div>
+
+    <form [formGroup]="form" (ngSubmit)="iniciarSesion()">
+      <div class="form-field" style="margin-bottom: 16px;">
+        <label>Correo electrónico</label>
+        <input type="email" formControlName="email" placeholder="correo@ejemplo.com" />
+      </div>
+
+      <div class="form-field" style="margin-bottom: 16px;">
+        <label>Contraseña</label>
+        <input type="password" formControlName="password" placeholder="••••••••" />
+      </div>
+
+      <div *ngIf="errorMensaje" style="color: #DC2626; font-size: 13px; margin-bottom: 12px;">
+        {{ errorMensaje }}
+      </div>
+
+      <button type="submit" class="btn btn--primary" style="width: 100%;">Iniciar sesión</button>
+    </form>
+
+    <p style="text-align: center; font-size: 13px; margin-top: 16px;">
+      ¿No tienes cuenta? <a routerLink="/registro" style="color: var(--blue);">Regístrate</a>
+    </p>
+  </div>
+</div>
