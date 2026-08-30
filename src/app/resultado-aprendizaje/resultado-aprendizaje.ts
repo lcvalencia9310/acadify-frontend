@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ResultadoAprendizaje } from './resultado-aprendizaje.model';
 
-const API_URL = 'http://127.0.0.1:8080/api/resultados-aprendizaje';
+const API_URL = 'https://acadify-backend-yc9p.onrender.com/api/resultados-aprendizaje';
 
 @Injectable({ providedIn: 'root' })
 export class ResultadoAprendizajeService {

@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Asignatura } from './asignatura.model';
 
-const API_URL = 'http://127.0.0.1:8080/api/asignaturas';
+const API_URL = 'https://acadify-backend-yc9p.onrender.com/api/asignaturas';
 
 @Injectable({ providedIn: 'root' })
 export class AsignaturaService {

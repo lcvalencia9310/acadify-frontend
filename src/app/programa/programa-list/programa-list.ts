@@ -2,7 +2,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
 import { ProgramaService } from '../programa';
-import Programa from '../programa.model';
+import {Programa} from '../programa.model';
 
 @Component({
   selector: 'app-programa-list',

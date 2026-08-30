@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { Syllabus } from './syllabus.model';
 
 // URL base de la API del backend (Spring Boot)
-const API_URL = 'http://127.0.0.1:8080/api/syllabus';
+const API_URL = 'https://acadify-backend-yc9p.onrender.com/api/syllabus';
 
 // Encabezados para evitar que el navegador cachee las respuestas GET
 const SIN_CACHE = new HttpHeaders({

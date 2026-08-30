@@ -1,6 +1,6 @@
-export default  class Programa {
-  idPrograma: number | undefined;
-  codigoPrograma: string | undefined;
-  nombrePrograma!: string;
-  activo: boolean | undefined;
+export interface Programa {
+  idPrograma?: number;
+  codigoPrograma: string;
+  nombrePrograma: string;
+  activo: boolean;
 }

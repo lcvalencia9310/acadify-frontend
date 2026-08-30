@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { RouterLink, Router, ActivatedRoute } from '@angular/router';
 import { AsignaturaService } from '../asignatura';
 import { ProgramaService } from '../../programa/programa';
-import Programa from '../../programa/programa.model';
+import { Programa } from '../../programa/programa.model';
 
 @Component({
   selector: 'app-asignatura-form',

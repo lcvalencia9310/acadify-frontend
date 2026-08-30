@@ -1,11 +1,11 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import Programa from './programa.model';
+import { Programa } from './programa.model';
 
 // Usamos 127.0.0.1 en vez de localhost para evitar el retraso de resolución
 // de DNS/IPv6 que detectamos en el módulo Syllabus
-const API_URL = 'http://127.0.0.1:8080/api/programas';
+const API_URL = 'https://acadify-backend-yc9p.onrender.com/api/programas';
 
 const SIN_CACHE = new HttpHeaders({
   'Cache-Control': 'no-cache, no-store, must-revalidate',
